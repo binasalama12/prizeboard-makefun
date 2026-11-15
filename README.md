@@ -1,3 +1,7 @@
+[![make.fun · makefun-frontend-01](https://make.fun/badge/makefun-frontend-01.svg)](https://make.fun/bounty/makefun-frontend-01?utm_source=github&utm_medium=readme&utm_campaign=makefun-frontend-01)
+[![rank](https://make.fun/badge/makefun-frontend-01/binasalama12/prizeboard-makefun/rank.svg)](https://make.fun/bounty/makefun-frontend-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=makefun-frontend-01)
+[![reward](https://make.fun/badge/makefun-frontend-01/binasalama12/prizeboard-makefun/reward.svg)](https://make.fun/bounty/makefun-frontend-01?utm_source=github&utm_medium=readme&utm_campaign=makefun-frontend-01)
+
 # PrizeBoard
 
 PrizeBoard is a bright, responsive frontend for discovering open make.fun competitions. It uses static HTML, CSS, and browser ES modules, with read-only GET requests to the make.fun API and no build step or third-party dependencies.
