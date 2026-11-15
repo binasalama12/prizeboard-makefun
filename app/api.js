@@ -1,15 +1,15 @@
-// make.fun's public API: read-only GET requests, open to any origin (CORS).
-// The full API is described at https://make.fun/api/openapi.json.
-
 const API = 'https://make.fun/api';
 
 async function get(path) {
-  const res = await fetch(API + path);
-  return res.json();
+  const response = await fetch(`${API}${path}`, { method: 'GET', headers: { Accept: 'application/json' } });
+  if (!response.ok) throw new Error(`The make.fun API returned ${response.status}. Please try again.`);
+  return response.json();
 }
 
-/** The open bounties: { items: [...] } (activity=times leaves out the activity a board does not show). */
-export const getBounties = () => get('/competitions?status=open&activity=times');
-
-/** One bounty, by its slug. */
+export async function getBounties() {
+  const data = await get('/competitions?status=open&activity=times');
+  return Array.isArray(data) ? data : (data.items ?? []);
+}
 export const getBounty = (slug) => get(`/competitions/${encodeURIComponent(slug)}`);
+export const getLeaderboard = (slug) => get(`/competitions/${encodeURIComponent(slug)}/leaderboard`);
+export const getProfile = (handle) => get(`/profiles/${encodeURIComponent(handle)}`);
